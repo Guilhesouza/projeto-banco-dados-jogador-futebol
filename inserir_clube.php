@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    
+<!--
+  foi criado um formulário para o usuário preencher o valor do nome_clube
+  e quando o usuário clicar no botão Enviar, que é do tipo "submit" ou seja irá executar a action do form
+  que irá levar o usuário para a página "inserindo_clube.php"
+    
+-->
 
 <form method="post" action="inserindo_clube.php">
     <input type="text" name="nome_clube">

@@ -10,16 +10,18 @@
     
 <?php
 
-    include "conexao.php";
+include "conexao.php";
 
-    $id = $_GET["id"];
-    $sql = "DELETE FROM clube WHERE id = " . $id;
-    if ($conn->query($sql) === TRUE) {
-        echo "Clube deletado com sucesso !!!";
-      } else {
-        echo "Erro ao deletar o clube: " . $conn->error;
-      }
-    
+$id = $_GET["id"];
+$sql = "DELETE FROM clube WHERE id = " . $id;
+if ($conn->query($sql) === TRUE) {
+  echo "Clube deletado com sucesso !!!";
+}
+else {
+  echo "Erro ao deletar o clube: " . $conn->error;
+}
+
+
 ?>
 
 </body>

@@ -10,16 +10,18 @@
     
 <?php
 
-    include "conexao.php";
+include "conexao.php";
 
-    $id = $_GET["id"];
-    $sql = "DELETE FROM posicao WHERE id = " . $id;
-    if ($conn->query($sql) === TRUE) {
-        echo "Posição deletada com sucesso !!!";
-      } else {
-        echo "Erro ao deletar a posição: " . $conn->error;
-      }
-    
+$id = $_GET["id"];
+$sql = "DELETE FROM posicao WHERE id = " . $id;
+if ($conn->query($sql) === TRUE) {
+  echo "Posição deletada com sucesso !!!";
+}
+else {
+  echo "Erro ao deletar a posição: " . $conn->error;
+}
+
+
 ?>
 
 </body>

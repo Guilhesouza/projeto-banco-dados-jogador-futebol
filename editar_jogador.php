@@ -12,6 +12,8 @@
 
 include_once('conexao.php');
 
+// GET = Buscar o id que o usuário passar
+
 $id = $_GET['id'];
 
 $sql = 'SELECT * FROM jogador
