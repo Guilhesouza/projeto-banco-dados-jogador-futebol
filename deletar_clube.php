@@ -1,28 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Deletar Clube</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url(imagens/clubes_futebol.png);
+      background-size: cover;
+      /* para ajustar a imagem ao tamanho do corpo */
+      /* Outros estilos opcionais, como cor do texto, margens, etc. */
+    }
+  </style>
 </head>
+
 <body>
-    
-<?php
 
-include "conexao.php";
+  <?php
 
-$id = $_GET["id"];
-$sql = "DELETE FROM clube WHERE id = " . $id;
-if ($conn->query($sql) === TRUE) {
-  echo "Clube deletado com sucesso !!!";
-}
-else {
-  echo "Erro ao deletar o clube: " . $conn->error;
-}
+  include "conexao.php";
+
+  $id = $_GET["id"];
+  $sql = "DELETE FROM clube WHERE id = " . $id;
+  if ($conn->query($sql) === TRUE) {
+    echo "<p class='Caixa3'> Clube Deletado com sucesso!!!</p>";
+  } else {
+    echo "<p class='Caixa3'> Erro ao deletar Clube: </p>" . $conn->error;
+  }
 
 
-?>
+  ?>
 
 </body>
-</html>

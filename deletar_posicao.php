@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Deletar Posição</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url(imagens/clubes_futebol.png);
+      background-size: cover;
+      /* para ajustar a imagem ao tamanho do corpo */
+      /* Outros estilos opcionais, como cor do texto, margens, etc. */
+    }
+  </style>
 </head>
-<body>
-    
+
 <?php
 
 include "conexao.php";
@@ -15,14 +18,12 @@ include "conexao.php";
 $id = $_GET["id"];
 $sql = "DELETE FROM posicao WHERE id = " . $id;
 if ($conn->query($sql) === TRUE) {
-  echo "Posição deletada com sucesso !!!";
-}
-else {
-  echo "Erro ao deletar a posição: " . $conn->error;
+  echo "<p class='Caixa3'> Posição Deletada com sucesso!!!</p>";
+} else {
+  echo "<p class='Caixa3'> Erro ao deletar Posição: </p>" . $conn->error;
 }
 
 
 ?>
 
 </body>
-</html>

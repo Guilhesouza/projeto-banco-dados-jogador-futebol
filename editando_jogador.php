@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editando Jogador</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url(imagens/clubes_futebol.png);
+            background-size: cover;
+            /* para ajustar a imagem ao tamanho do corpo */
+            /* Outros estilos opcionais, como cor do texto, margens, etc. */
+        }
+    </style>
 </head>
+
 <body>
 
-<?php
+    <?php
 
     include "conexao.php";
     $nome = $_POST["nome"];
@@ -23,16 +28,13 @@
     data_nascimento = '" . $data_nascimento . "' WHERE id=" . $id;
 
     if ($conn->query($sql) === TRUE) {
-    echo "Novo Jogador alterado com sucesso!!";
+        echo "<p class='Caixa3'> Novo Jogador alterado com sucesso!!!</p>";
     } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
     $conn->close();
 
     ?>
 
-
-    
 </body>
-</html>

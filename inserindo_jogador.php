@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inserindo Jogador</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url(imagens/clubes_futebol.png);
+            background-size: cover;
+            /* para ajustar a imagem ao tamanho do corpo */
+            /* Outros estilos opcionais, como cor do texto, margens, etc. */
+        }
+    </style>
 </head>
+
 <body>
     <?php
     include_once('conexao.php');
@@ -16,16 +21,15 @@
     $data_nascimento = $_POST["data_nascimento"];
 
     $sql = "INSERT INTO jogador (nome, id_clube, salario, id_posicao, data_nascimento)
-    VALUES ('" . $nome . "', '". $id_clube . "', '". $salario . "', '". $id_posicao . "', '". $data_nascimento . "')";
+    VALUES ('" . $nome . "', '" . $id_clube . "', '" . $salario . "', '" . $id_posicao . "', '" . $data_nascimento . "')";
 
     if ($conn->query($sql) === TRUE) {
-    echo "Novo Jogador criado com sucesso!!";
+        echo "<p class='Caixa3'> Novo Jogador criado com sucesso!!!</p>";
     } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
     $conn->close();
 
     ?>
 </body>
-</html>
